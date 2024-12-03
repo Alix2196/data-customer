@@ -1,7 +1,7 @@
 package com.ntt.data.customer.Repository;
 
 import com.ntt.data.customer.enums.DocumentTypeEnum;
-import com.ntt.data.customer.models.Customer;
+import com.ntt.data.customer.models.CustomerModel;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -9,18 +9,19 @@ import java.util.Optional;
 @Repository
 public class CustomerRepository {
 
-    public Optional<Customer> findByDocumentTypeAndDocument(String documentType, Integer documentNumber) {
-        if ("C".equals(documentType) && Integer.valueOf(23445322).equals(documentNumber)) {
-            Customer mockCustomer = new Customer();
-            mockCustomer.setDocument(23445322);
-            mockCustomer.setDocumentType(DocumentTypeEnum.CEDULA);
-            mockCustomer.setMiddleName("Juan");
-            mockCustomer.setLastName("Perez");
-            mockCustomer.setSecondLastName("Gomez");
-            mockCustomer.setPhone(1234567890);
-            mockCustomer.setAddress("123 Main Street");
-            mockCustomer.setCityOfResidence("Bogotá");
-            return Optional.of(mockCustomer);
+    public Optional<CustomerModel> findByDocumentTypeAndDocument(String documentType, Integer documentNumber) {
+        if (DocumentTypeEnum.CEDULA.getCode().equals(documentType) && Integer.valueOf(23445322).equals(documentNumber)) {
+            CustomerModel mockCustomerModel = new CustomerModel();
+            mockCustomerModel.setDocument(23445322);
+            mockCustomerModel.setDocumentType(DocumentTypeEnum.CEDULA);
+            mockCustomerModel.setMiddleName("Juan");
+            mockCustomerModel.setFirstName("Sebastian");
+            mockCustomerModel.setLastName("Perez");
+            mockCustomerModel.setSecondLastName("Gomez");
+            mockCustomerModel.setPhone(1234567890);
+            mockCustomerModel.setAddress("123 Main Street");
+            mockCustomerModel.setCityOfResidence("Bogotá");
+            return Optional.of(mockCustomerModel);
         }
         return Optional.empty();
     }
