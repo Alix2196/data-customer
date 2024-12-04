@@ -23,21 +23,26 @@
             <label for="document" class="form-label text-primary">Número de documento</label>
             <div class="input-group mb-3">
               <input
-                type="number"
+                type="text"
                 id="document"
+                name="document"
                 class="form-control"
                 aria-label="Número de documento"
                 formControlName="document"
-              />
+                />
+                <!-- (input)="formatAmount()" -->
             </div>
           </div>
         </div>
 
+        <div *ngIf="showAlert" class="alert alert-danger" role="alert">
+          Ussuario no encontrado
+        </div>
 
         <div class="d-grid gap-1">
           <button
             type="button"
-            class="btn btn-primary"
+            class="btn btn-primary rounded-pill .bg-primary-subtle"
             (click)="btnBuscar()"
             [disabled]="form.invalid">
             Buscar
@@ -46,7 +51,4 @@
       </div>
     </form>
   </div>
-  <pre>{{ form.value | json }}</pre>
-
-
 </div>
