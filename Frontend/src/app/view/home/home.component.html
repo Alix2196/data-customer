@@ -1,38 +1,52 @@
-<div
-  class="card justify-content-center align-items-center position-absolute top-50 start-50 translate-middle w-25 bg-transparent"
->
-  <form  class="flex aling-items-center" >
-    <div class="m-5 p-5">
-      <div>
-        <label for="exampleInputEmail1" class="form-label text-primary"
-          >Tipo de documento</label
-        >
-        <div class="input-group mb-3">
-          <select class="form-select" id="inputGroupSelect01">
-            <option selected>Choose...</option>
-            <option value="1">Cedula de Ciudadania</option>
-            <option value="2">Pasaporte</option>
-            <option value="3">Otro</option>
-          </select>
-        </div>
-      </div>
-      <div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label text-primary"
-            >Numero de docuemnto</label
-          >
+<div class="flex justify-content-center align-items-center">
+  <div
+    class="card justify-content-center align-items-center position-absolute top-50 start-50 translate-middle w-25 bg-transparent"
+  >
+    <form class="flex align-items-center" [formGroup]="form">
+      <div class="m-5 p-5">
+        <div>
+          <label for="documentType" class="form-label text-primary">Tipo de documento</label>
           <div class="input-group mb-3">
-            <input
-              type="text"
-              class="form-control"
-              aria-label="Amount (to the nearest dollar)"
-            />
+            <select 
+              class="form-select" 
+              id="documentType"
+              formControlName="documentType"
+              >
+              <option value="" selected>Seleccione...</option>
+              <option value="C">Cédula de Ciudadanía</option>
+              <option value="P">Pasaporte</option>
+            </select>
           </div>
         </div>
+        <div>
+          <div class="mb-3">
+            <label for="document" class="form-label text-primary">Número de documento</label>
+            <div class="input-group mb-3">
+              <input
+                type="number"
+                id="document"
+                class="form-control"
+                aria-label="Número de documento"
+                formControlName="document"
+              />
+            </div>
+          </div>
+        </div>
+
+
+        <div class="d-grid gap-1">
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="btnBuscar()"
+            [disabled]="form.invalid">
+            Buscar
+          </button>
+        </div>
       </div>
-      <div class="d-grid gap-1">
-        <button class="btn btn-primary" type="submit" (click)="btnBuscar()">Buscar</button>
-      </div>
-    </div>
-  </form>
+    </form>
+  </div>
+  <pre>{{ form.value | json }}</pre>
+
+
 </div>
