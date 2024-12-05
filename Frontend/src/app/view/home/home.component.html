@@ -1,16 +1,19 @@
 <div class="flex justify-content-center align-items-center">
   <div
-    class="card justify-content-center align-items-center position-absolute top-50 start-50 translate-middle w-25 bg-transparent"
+    class="card justify-content-center align-items-center position-absolute top-50 start-50 translate-middle p-5"
+    style="background-color: #dbe7fc;"
   >
-    <form class="flex align-items-center" [formGroup]="form">
-      <div class="m-5 p-5">
+    <form class="flex align-items-center" [formGroup]="form" style="width: 100%;">
+      <p class="m-0 p-0 mb-2" style="color:gray; font-size:12px">Todos los campos son obligatorios</p>
+      <div class="">
         <div>
-          <label for="documentType" class="form-label text-primary">Tipo de documento</label>
-          <div class="input-group mb-3">
+          <label for="documentType" class="form-label" style="color: #022D77; font-size:12px">Tipo de documento</label>
+          <div class="input-group">
             <select 
               class="form-select" 
               id="documentType"
               formControlName="documentType"
+              style="border:1px solid gray"
               >
               <option value="" selected>Seleccione...</option>
               <option value="C">Cédula de Ciudadanía</option>
@@ -18,32 +21,40 @@
             </select>
           </div>
         </div>
-        <div>
-          <div class="mb-3">
-            <label for="document" class="form-label text-primary">Número de documento</label>
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                id="document"
-                name="document"
-                class="form-control"
-                aria-label="Número de documento"
-                formControlName="document"
-                />
-                <!-- (input)="formatAmount()" -->
-            </div>
+        <div class="mt-3" >
+          <label for="document" class="form-label" style="color: #022D77; font-size:12px">Número de documento</label>
+          <div class="input-group">
+            <input
+              type="text"
+              id="document"
+              name="document"
+              class="form-control"
+              aria-label="Número de documento"
+              formControlName="document"
+              style="border:1px solid gray"
+              />
+              <!-- (input)="formatAmount()" -->
           </div>
         </div>
 
-        <div *ngIf="showAlert" class="alert alert-danger" role="alert">
-          Ussuario no encontrado
+        <div class="pt-2">
+          <div *ngIf="showAlert" class="alert alert-danger" role="alert">
+            Ussuario no encontrado
+          </div>
         </div>
 
-        <div class="d-grid gap-1">
+        <div class="d-grid gap-1 mt-4">
           <button
             type="button"
+            [ngStyle]="{
+              'background-color': form.invalid ? 'white' : '#022D77',
+              'color': form.invalid ? 'gray' : 'white',
+              'border':'1px solid gray',
+              'height':'45px'
+            }"
             class="btn btn-primary rounded-pill .bg-primary-subtle"
             (click)="btnBuscar()"
+
             [disabled]="form.invalid">
             Buscar
           </button>

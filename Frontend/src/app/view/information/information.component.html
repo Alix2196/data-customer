@@ -1,14 +1,15 @@
 <div
-  class="card justify-content-left align-items-left position-absolute top-50 start-50 translate-middle w-25 bg-transparent"
+  class="card justify-content-center align-items-center position-absolute top-50 start-50 translate-middle p-5"
+  style="background-color: #dbe7fc;"    
 >
-  <form [formGroup]="form" class="flex aling-items-left">
-    <div class="m-5 p-5">
+  <form [formGroup]="form" class="flex aling-items-left" style="width: 100%;">
+    <div class="">
       <div>
-        <p class="fs-4 text-black py-3">Informacion Basica</p>
+        <p class="fs-4 text-black py-3 text-secondary">Informacion Basica</p>
       </div>
       <div>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label text-primary"
+          <label for="exampleInputEmail1" class="form-label text-secondary" style=" font-size:12px"
             >Prmer Apellido</label
           >
           <div class="input-group mb-3">
@@ -18,13 +19,14 @@
               class="form-control disabled"
               aria-label="Amount (to the nearest dollar)"
               formControlName="lastName"
+              style="color: gray; border:1px solid gray"
             />
           </div>
         </div>
       </div>
       <div>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label text-primary"
+          <label for="exampleInputEmail1" class="form-label text-secondary" style="font-size:12px"
             >Primer Nombre</label
           >
           <div class="input-group mb-3">
@@ -34,6 +36,7 @@
               class="form-control disabled"
               aria-label="Amount (to the nearest dollar)"
               formControlName="firstName"
+              style="color: gray; border:1px solid gray"
             />
           </div>
         </div>
