@@ -1,48 +1,43 @@
 <div
   class="card justify-content-center align-items-center position-absolute top-50 start-50 translate-middle p-5"
-  style="background-color: #dbe7fc;"    
+  style="background-color: #dbe7fc; width: 100%; max-width: 300px;"
 >
-  <form [formGroup]="form" class="flex aling-items-left" style="width: 100%;">
-    <div class="">
-      <div>
-        <p class="fs-4 text-black py-3 text-secondary">Informacion Basica</p>
+  <form [formGroup]="form" class="container">
+    <p class="fs-4 text-black py-3 text-secondary text-center">Información Básica</p>
+    <div class="row">
+      <!-- Primer Apellido -->
+      <div class="col-12 mb-3">
+        <label for="lastName" class="form-label text-secondary" style="font-size: 12px;">Primer Apellido</label>
+        <input
+          id="lastName"
+          type="text"
+          class="form-control"
+          formControlName="lastName"
+          placeholder="Ingrese su primer apellido"
+          style="color: gray; border: 1px solid gray;"
+        />
       </div>
-      <div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label text-secondary" style=" font-size:12px"
-            >Prmer Apellido</label
-          >
-          <div class="input-group mb-3">
-            <input
-              id="lastName"
-              type="text"
-              class="form-control disabled"
-              aria-label="Amount (to the nearest dollar)"
-              formControlName="lastName"
-              style="color: gray; border:1px solid gray"
-            />
-          </div>
-        </div>
+
+      <!-- Primer Nombre -->
+      <div class="col-12 mb-3">
+        <label for="firstName" class="form-label text-secondary" style="font-size: 12px;">Primer Nombre</label>
+        <input
+          id="firstName"
+          type="text"
+          class="form-control"
+          formControlName="firstName"
+          placeholder="Ingrese su primer nombre"
+          style="color: gray; border: 1px solid gray;"
+        />
       </div>
-      <div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label text-secondary" style="font-size:12px"
-            >Primer Nombre</label
-          >
-          <div class="input-group mb-3">
-            <input
-              id="firstName"
-              type="text"
-              class="form-control disabled"
-              aria-label="Amount (to the nearest dollar)"
-              formControlName="firstName"
-              style="color: gray; border:1px solid gray"
-            />
-          </div>
-        </div>
+    </div>
+
+    <!-- Botón Volver -->
+    <div class="row">
+      <div class="col-12 text-center">
         <button
           type="button"
-          class="btn btn-link flex justify-content-center align-items-center"
+          class="btn btn-link text-secondary"
           (click)="btnAtras()"
         >
           Volver

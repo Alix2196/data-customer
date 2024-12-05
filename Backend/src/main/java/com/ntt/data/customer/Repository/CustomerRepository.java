@@ -14,9 +14,9 @@ public class CustomerRepository {
             CustomerModel mockCustomerModel = new CustomerModel();
             mockCustomerModel.setDocument(23445322);
             mockCustomerModel.setDocumentType(DocumentTypeEnum.CEDULA);
-            mockCustomerModel.setMiddleName("Juan");
-            mockCustomerModel.setFirstName("Sebastian");
-            mockCustomerModel.setLastName("Perez");
+            mockCustomerModel.setMiddleName("li");
+            mockCustomerModel.setFirstName("Jhenny");
+            mockCustomerModel.setLastName("Pérez");
             mockCustomerModel.setSecondLastName("Gomez");
             mockCustomerModel.setPhone(1234567890);
             mockCustomerModel.setAddress("123 Main Street");
